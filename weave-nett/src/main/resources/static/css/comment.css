@@ -1,0 +1,202 @@
+@charset "utf-8";
+/****************************************/
+/* Name: WeaveNet
+/* PART: Comment STYLE
+/* Version: 1.0 / day: 2025-05-16
+/* Author: EunSung
+/****************************************/
+
+/*
+=====================================================================================
+comment
+=====================================================================================
+*/
+
+/* 댓글 입력창 */
+.cmt_write_wrap{    
+	position: relative;
+    width: 100%;
+    border: 1px solid var(--border-default);
+    border-radius: 6px;
+    background: var(--bg-default);
+    padding:16px;
+}
+.cmt_write_wrap .cmt_profile {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.cmt_write_wrap .cmt_text_area textarea{
+	width:100%;
+	height:80px;
+	font-size: 15px;
+	color: var(--text-default);
+	resize: none;
+	-webkit-appearance: none;
+	background: transparent;
+	font-family: 'Noto Sans KR';
+}
+.cmt_write_wrap .cmt_text_area textarea:-ms-input-placeholder {
+	color: var(--text-placeholder);
+}
+.cmt_write_wrap .cmt_text_area textarea:focus{
+	outline: none;
+}
+
+.cmt_write_wrap .cmt_btn_area {
+	display: flex;
+	justify-content: end;
+	gap: 8px;
+}
+
+/* 댓글 목록 정렬 옵션 */
+.cmt_list_option {
+	display: flex;
+	justify-content: end;
+	margin:20px 0;
+}
+
+/* 댓글 목록*/
+.cmt_list {
+	border-top: 1px solid var(--border-default);
+	margin-bottom:80px;
+}
+.cmt_list .cmt_set {
+	position: relative;
+	padding:16px 0;
+	border-bottom: 1px solid var(--color-gray-200);
+}
+.cmt_list .cmt_set.reply {
+	background-color: var(--color-gray-050);
+	padding-left: 56px;
+}
+.cmt_list .cmt_set.write_ver {
+	background-color: var(--color-gray-050);
+}
+.cmt_list .cmt_set.reply:after,
+.cmt_list .cmt_set.write_ver:after {
+	content: "";
+    position: absolute;
+    top: 17px;
+    left: 28px;
+	background-image:url(../img/ico_corner_down_right.svg);
+	background-size: 16px;
+	width: 16px;
+	height: 16px;
+}
+.cmt_list .cmt_set .photo {
+    position: absolute;
+    top: 17px;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bg-default);
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+.cmt_list .cmt_set.reply .photo {
+	left: 56px;
+}
+.cmt_list .cmt_set .photo .thumb {
+	width: 40px;
+	height:40px;
+}
+.cmt_list .cmt_set .cmt_box {
+	margin: 0 0 0 56px;
+}
+.cmt_list .cmt_set .cmt_box .user {
+	display: flex;
+	align-items: center;
+	margin-bottom: 8px;
+	gap: 8px;
+}
+.cmt_list .cmt_set .cmt_box .user .cmt_task {
+	position: relative;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    margin-left: auto;
+    padding: 0 14px 0 16px;
+    line-height: 1px;
+}
+.cmt_list .cmt_set .cmt_box .user .date {
+	-webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    display: block;
+    color: var(--color-gray-600);
+    font-size: 12px;
+    line-height: 17px;
+}
+.cmt_list .cmt_set .cmt_box .user .pin {
+	/* display: none; */
+}
+.cmt_list .cmt_set .cmt_box .user .pin img{
+	width: 14px;
+	height: 14px;
+}
+.cmt_list .cmt_set .cmt_box .user .cmt_task .btn_more {
+	border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    padding: 8px;
+    margin: -8px;
+    border-radius: 50%
+}
+.cmt_list .cmt_set .cmt_box .user .cmt_task .btn_more:hover {
+	background-color: var(--bg-hover);
+}
+.cmt_list .cmt_set .cmt_box .user .cmt_task .btn_more:before {
+	background-image: url(../img/ico_more.svg);
+    background-size: 20px;
+    width: 20px;
+    height: 20px;
+    display: block;
+    content: ""
+}
+.cmt_list .cmt_set .cmt_box .user .cmt_task .ly_context {
+	position: absolute;
+    top: 32px;
+    right: 6px;
+    width: 160px;
+    background: var(--bg-default);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-md);
+    border-radius: 6px;
+    z-index: 99;
+    display: none;
+}
+.cmt_list .cmt_set .cmt_box .user .cmt_task .ly_context.active {
+  display: block;
+}
+.cmt_list .cmt_set .cmt_box .user .cmt_task .ly_context ul li:hover {
+    background-color: var(--bg-hover);
+}
+.cmt_list .cmt_set .cmt_box .user .cmt_task .ly_context ul li button{
+    padding: 10px 16px;
+    width: 100%;
+    text-align: left;
+}
+.cmt_list .cmt_set .cmt_box .cmt_area {
+	padding: 0 16px 0 0;
+    font-size: 14px;
+    color: var(--text-default);
+    line-height: 22px;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+.cmt_list .cmt_set .cmt_box .cmt_reply_area {
+	display: flex;
+    margin-top: 12px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.cmt_list .cmt_set .cmt_box .register_box {
+	padding-right: 28px;
+}
+.cmt_list .cmt_set .cmt_box .register_box .cmt_write_wrap .cmt_text_area textarea {
+	height: 40px;
+}

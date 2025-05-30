@@ -1,0 +1,1035 @@
+@charset "UTF-8";
+
+
+table.listTypeA thead th.sortable-header {
+	cursor: pointer;
+}
+
+table.listTypeA thead th.sortable-header .sort-arrow {
+	font-size: 0.8em;
+	margin-left: 5px;
+	display: inline-block;
+	width: 1em;
+}
+
+/* 사용자 상세 정보 모달 내 메시지 스타일 */
+#userDetailModal .modal-user-name-header {
+	margin-bottom: 15px;
+}
+
+#userDetailModal .modal-user-name-header h4 {
+	font-size: 1.2em; /* 글자 크기 조정 */
+	color: #333;
+	margin-bottom: 8px;
+}
+
+#userDetailModal .modal-user-name-header hr {
+	border: 0;
+	height: 1px;
+	background: #eee;
+	margin: 8px 0;
+}
+
+#userDetailModal .user-detail-message-section p {
+	padding: 12px 15px;
+	margin-top: 0; /* h4, hr에서 이미 간격 있으므로 */
+	margin-bottom: 10px; /* 메시지 간 간격 */
+	border-radius: 5px;
+	font-weight: 500; /* 글자 두께 */
+	line-height: 1.5;
+}
+
+/* 상태에 따른 안내 메시지 (조회 불가 사유) */
+#userDetailModal .user-detail-message-section .status-message {
+	color: #856404; /* 부드러운 경고 텍스트 색상 */
+	background-color: #fff3cd; /* 부드러운 경고 배경색 */
+	border: 1px solid #ffeeba; /* 부드러운 경고 테두리색 */
+}
+
+/* 추가 정보 메시지 (status-message 아래에 나오는) */
+#userDetailModal .user-detail-message-section .additional-info {
+	font-size: 0.95em;
+	color: #555;
+	background-color: #f8f9fa; /* 약간 다른 배경 */
+	border: 1px solid #eee;
+	padding: 10px 15px;
+}
+
+/* 일반 오류 메시지 (빨간색 계열) */
+#userDetailModal .user-detail-message-section .error-message {
+	color: #721c24; /* 어두운 빨강 텍스트 */
+	background-color: #f8d7da; /* 연한 빨강 배경 */
+	border: 1px solid #f5c6cb; /* 빨강 계열 테두리 */
+}
+
+/* 정보 메시지 (파란색 계열) */
+#userDetailModal .user-detail-message-section .info-message {
+	color: #0c5460; /* 어두운 청록 텍스트 */
+	background-color: #d1ecf1; /* 연한 청록 배경 */
+	border: 1px solid #bee5eb; /* 청록 계열 테두리 */
+}
+
+/* 실제 데이터 표시 영역 기본 스타일 (필요시 추가) */
+#userDetailModal .user-detail-actual-data {
+	color: #333; /* 기본 텍스트 색상 */
+}
+
+#userDetailModal .user-detail-actual-data .user-info-table th {
+	background-color: #f9f9f9; /* 테이블 헤더 배경색 유지 */
+}
+
+/* "사원관리" 제목 스타일 */
+.page-title {
+	font-size: 24px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 0;
+	margin-bottom: 8px;
+	text-align: left;
+	line-height: 1.2;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* 제목 아래 구분선 스타일 */
+.title-divider {
+	border: 0;
+	height: 1px;
+	background: #bbb;
+	margin-bottom: 20px;
+}
+
+/* 검색 폼 스타일 */
+.search-form {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background-color: #f8f8f8;
+	padding: 10px 15px;
+	border-radius: 4px;
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+}
+
+/* .search-input, .filter-select, .btn-search는 이전 그대로 유지 */
+.search-input {
+	padding: 7px 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 13px;
+	flex-grow: 1;
+	min-width: 150px;
+}
+
+.filter-select {
+	padding: 7px 10px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 13px;
+	min-width: 90px;
+}
+
+.btn-search {
+	padding: 7px 12px;
+	background-color: #555;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 13px;
+	transition: background-color 0.3s ease;
+}
+
+.btn-search:hover {
+	background-color: #333;
+}
+
+/* 테이블 리스트 */
+.tbl_list {
+	width: 100%;
+	border-collapse: collapse;
+	background-color: #fff;
+	border-top: 2px solid #555;
+	border-bottom: 1px solid #ccc; /* 하단 선은 여기에서 제어 */
+	box-shadow: none;
+	table-layout: fixed;
+}
+
+.tbl_list th, .tbl_list td {
+	border-bottom: 1px solid #eee; /* 모든 셀의 하단 테두리 */
+	padding-left: 8px;
+	padding-right: 8px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: left;
+	font-size: 12px;
+	vertical-align: middle;
+	word-break: break-word;
+	/* 중요: flexbox가 적용된 TD의 min-height를 설정하여 내부 요소가 선을 침범하지 않도록 함 */
+	min-height: 80px; /* 대략적인 최소 높이 설정, 필요시 조정 */
+}
+
+.tbl_list thead th {
+	background-color: #f9f9f9;
+	font-weight: bold;
+	color: #333;
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+
+/* 컬럼 너비는 JSP의 inline style="width:XX%;"에 따라 고정됩니다 */
+.tbl_list th:nth-child(1), .tbl_list td:nth-child(1) {
+	width: 25%;
+	text-align: left;
+}
+
+.tbl_list th:nth-child(2), .tbl_list td:nth-child(2) {
+	width: 15%;
+	text-align: center;
+}
+
+.tbl_list th:nth-child(3), .tbl_list td:nth-child(3) {
+	width: 30%;
+}
+
+.tbl_list th:nth-child(4), .tbl_list td:nth-child(4) {
+	width: 30%;
+}
+
+.tbl_list tbody tr:last-child td {
+	border-bottom: none; /* 마지막 행의 하단 테두리는 제거 */
+}
+
+/* '권한 / 등급' 컬럼 폼 (3번째 td) */
+.tbl_list td:nth-child(3) {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	align-items: center; /* 셀 내부에서 가운데 정렬 */
+	padding: 8px 5px;
+}
+
+.tbl_list td:nth-child(3) select {
+	padding: 4px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-size: 11px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.tbl_list td:nth-child(3) select:first-of-type {
+	margin-bottom: 2px;
+}
+
+/* 이전에 주신 권한/등급 변경 버튼 CSS는 그대로 유지 */
+.tbl_list td:nth-child(3) button {
+	padding: 4px 8px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: 11px;
+	transition: background-color 0.3s ease;
+	width: 100%;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.tbl_list td:nth-child(3) button:hover {
+	background-color: #0056b3;
+}
+
+/* '관리' 컬럼 버튼들을 감싸는 div (JSP에 추가된 .management-buttons) */
+.management-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	align-items: center; /* div 내부에서 버튼들을 가운데 정렬 */
+	width: 100%; /* div가 td 너비를 꽉 채우도록 */
+}
+
+/* '관리' 컬럼의 폼 (td:nth-child(4) 안에 있는 form) */
+.tbl_list td:nth-child(4) form {
+	margin-bottom: 0;
+	width: 100%;
+}
+
+/* '관리' 컬럼의 버튼들 (td:nth-child(4) form button) - 오빠가 주신 그대로 유지! */
+.tbl_list td:nth-child(4) form button {
+	padding: 4px 8px;
+	font-size: 11px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	cursor: pointer;
+	background-color: #f8f8f8;
+	color: #333;
+	transition: background-color 0.3s ease;
+	width: 50px; /* 오빠가 주신 50px 그대로 유지! */
+	box-sizing: border-box;
+	text-align: center;
+	line-height: 1.2;
+}
+
+/* 각 액션 버튼 색상 (이전에 주신 CSS 그대로 유지) */
+.management-buttons form:has(button:contains( "승인 ")) button {
+	background-color: #d4edda;
+	border-color: #c3e6cb;
+	color: #155724;
+}
+
+.management-buttons form:has(button:contains( "거부 ")) button {
+	background-color: #f8d7da;
+	border-color: #f5c6cb;
+	color: #721c24;
+}
+
+.management-buttons form:has(button:contains( "삭제 ")) button {
+	background-color: #fff3cd;
+	border-color: #ffeeba;
+	color: #856404;
+}
+
+.management-buttons form:has(button:contains( "복구 ")) button {
+	background-color: #d1ecf1;
+	border-color: #bee5eb;
+	color: #0c5460;
+}
+
+.management-buttons form:has(button:contains( "영구삭제 ")) button {
+	background-color: #e2e3e5;
+	border-color: #d6d8db;
+	color: #383d41;
+}
+
+.management-buttons form button:hover {
+	filter: brightness(95%);
+}
+
+.pagenation {
+	text-align: center;
+	margin-top: 20px;
+	padding-bottom: 15px;
+}
+
+.pagenation a, .pagenation strong {
+	display: inline-block;
+	padding: 4px 7px;
+	margin: 0 2px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	text-decoration: none;
+	color: #555;
+	font-size: 11px;
+	transition: background-color 0.3s ease;
+}
+
+.pagenation a:hover {
+	background-color: #eee;
+}
+
+.pagenation strong {
+	background-color: #007bff;
+	color: white;
+	border-color: #007bff;
+	font-weight: bold;
+}
+
+/* 모달 스타일 (이전에 주신 CSS 그대로 유지) */
+.modal-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+}
+
+.modal-overlay.active {
+	display: flex;
+}
+
+.modal-overlay.active .modal-content {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.modal-content {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	width: 90%;
+	max-width: 320px; /* 모달 너비 */
+	box-sizing: border-box;
+	transform: translateY(-50px);
+	opacity: 0;
+	transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.modal-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.modal-header h2 {
+	font-size: 18px;
+	margin: 0;
+}
+
+.modal-header .close-modal {
+	background: none;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	color: #999;
+}
+
+.modal-body {
+	margin-bottom: 15px;
+}
+
+.modal-select-group {
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+	gap: 10px;
+}
+
+.modal-select-group label {
+	font-size: 13px;
+	margin-bottom: 0;
+	flex-shrink: 0;
+	width: 50px;
+	text-align: right;
+}
+
+.modal-body select {
+	width: 100%;
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 13px;
+	box-sizing: border-box;
+	flex-grow: 1;
+}
+
+.modal-footer {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	border-top: 1px solid #eee;
+	padding-top: 10px;
+}
+
+.modal-footer button {
+	padding: 8px 12px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 13px;
+}
+
+.btn-confirm-selection {
+	background-color: #007bff;
+	color: white;
+	border: none;
+}
+
+.btn-confirm-selection:hover {
+	background-color: #0056b3;
+}
+
+.btn-cancel-selection {
+	background-color: #f0f0f0;
+	color: #333;
+	border: 1px solid #ccc;
+}
+
+.btn-cancel-selection:hover {
+	background-color: #e0e0e0;
+}
+
+#roleRankModal.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1050;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+#roleRankModal.modal-overlay.active {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+.management-actions-cell {
+	position: relative;
+	text-align: center;
+}
+
+.cmt_task {
+	display: inline-block;
+	position: relative;
+}
+
+.btn_more {
+	background: none;
+	border: 1px solid transparent;
+	padding: 0px 5px;
+	font-size: 1.5em;
+	line-height: 1;
+	color: #333;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.btn_more:hover {
+	border-color: #bbb;
+}
+
+.btn_more .blind {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+}
+
+.ly_context {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	z-index: 1100;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	min-width: 100px;
+	display: none;
+	border-radius: 4px;
+	padding: 5px 0;
+}
+
+.ly_context.active {
+	display: block;
+}
+
+.ly_context ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ly_context ul li form {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.ly_context ul li button {
+	display: block;
+	width: 100%;
+	padding: 8px 12px;
+	text-align: left;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 0.9em;
+	color: #333;
+	box-sizing: border-box;
+}
+
+.ly_context ul li button:hover {
+	background-color: #f5f5f5;
+}
+
+.ly_context ul li button.action-destructive {
+	color: red;
+}
+
+.management-actions-cell {
+	position: relative;
+	text-align: center;
+}
+
+.cmt_task {
+	display: inline-block;
+	position: relative;
+}
+
+.btn_more {
+	background: none;
+	border: 1px solid transparent;
+	padding: 0px 5px;
+	font-size: 1.5em;
+	line-height: 1;
+	color: #333;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.btn_more:hover {
+	border-color: #bbb;
+}
+
+.btn_more .blind {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+}
+
+.ly_context {
+	position: absolute;
+	top: 100%;
+	right: 0;
+	z-index: 1100;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	min-width: 100px;
+	display: none;
+	border-radius: 4px;
+	padding: 5px 0;
+}
+
+.ly_context.active {
+	display: block;
+}
+
+.ly_context ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ly_context ul li form {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.ly_context ul li button {
+	display: block;
+	width: 100%;
+	padding: 8px 12px;
+	text-align: left;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 0.9em;
+	color: #333;
+	box-sizing: border-box;
+}
+
+.ly_context ul li button:hover {
+	background-color: #f5f5f5;
+}
+
+.ly_context ul li button.action-destructive {
+	color: red;
+}
+
+tr.row-inactive td { /* 삭제대기 상태인 행의 모든 td 내부 텍스트 색상 변경 */
+	color: #BFBFBF;
+}
+
+.link-user-detail { /* 사용자 이름 링크 스타일 */
+	cursor: pointer;
+}
+
+.link-user-detail:hover {
+	color: #0056b3;
+}
+
+.user-detail-modal-content { /* 상세 정보 모달 내용 너비 등 조정 */
+	width: 60%;
+	max-width: 700px;
+}
+
+.role-rank-text-trigger {
+	cursor: pointer;
+	padding: 2px 5px; /* 약간의 패딩 추가하여 클릭 영역 확보 */
+	display: inherit; /* 패딩 적용을 위해 */
+}
+
+.role-rank-text-trigger:hover {
+	background-color: #f0f0f0; /* 클릭 가능함을 시각적으로 표시 */
+	border-radius: 3px;
+}
+
+.role-rank-display-area {
+	display: ruby;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 5px;
+	border: 0;
+	border-radius: 3px;
+	padding: center;
+	background-color: #fff;
+}
+
+.current-role-rank {
+	flex-grow: 1;
+	font-size: 14px;
+	color: #333;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.btn-open-modal {
+	padding: 0 8px;
+	font-size: 12px;
+	line-height: 22px;
+	color: var(--btn-outline-text);
+	background-color: var(--btn-outline-bg);
+	border: 1px solid var(--btn-outline-border);
+	font-size: 12px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: white;
+	color: #333333;
+	cursor: pointer;
+	display: flex;
+	background-color: var(--btn-outline-bg);
+	border: 1px solid var(--btn-outline-border);
+}
+
+.btn-open-modal:hover {
+	background-color: #e0e0e0;
+}
+
+#roleRankModal.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1050;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+#roleRankModal.modal-overlay.active {
+	opacity: 1;
+	visibility: visible;
+	transition: opacity 0.3s ease, visibility 0s linear 0s;
+}
+
+/* === 신규 댓글 더보기 메뉴 스타일 시작 === */
+.management-actions-cell { /* 관리 TD */
+	position: relative; /* .ly_context 위치 기준 */
+	text-align: center;
+}
+
+.cmt_task { /* 더보기 버튼과 메뉴를 감싸는 컨테이너 */
+	display: inline-block;
+	position: relative;
+}
+
+.btn_more { /* 더보기 버튼 "⋮" */
+	background: none;
+	border: 1px solid transparent;
+	padding: 0px 5px;
+	font-size: 1.5em;
+	line-height: 1;
+	color: #333;
+	cursor: pointer;
+	vertical-align: middle;
+}
+
+.btn_more:hover {
+	border-color: #bbb; /* 버튼 호버 시 테두리 (선택적) */
+}
+
+.btn_more .blind { /* 스크린리더용 텍스트 숨김 */
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+}
+
+.ly_context { /* 드롭다운 메뉴 */
+	position: absolute;
+	top: 100%; /* 버튼 바로 아래 */
+	right: 0; /* 버튼 오른쪽에 메뉴 오른쪽 정렬 */
+	z-index: 1100;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	min-width: 100px;
+	display: none; /* 기본 숨김 */
+	border-radius: 4px;
+	padding: 5px 0;
+}
+
+.ly_context.active { /* 활성화 시 보임 */
+	display: block;
+}
+
+.ly_context ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.ly_context ul li form { /* 폼 스타일 초기화 */
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+.ly_context ul li button { /* 메뉴 내 버튼 스타일 */
+	display: block;
+	width: 100%;
+	padding: 8px 12px;
+	text-align: left;
+	background: none;
+	border: none;
+	cursor: pointer;
+	font-size: 0.9em;
+	color: #333;
+	box-sizing: border-box;
+}
+
+.ly_context ul li button:hover {
+	background-color: #f5f5f5;
+}
+
+.ly_context ul li button.action-destructive { /* 삭제/거부 등 위험 작업 버튼 */
+	color: red;
+}
+/* === 신규 댓글 더보기 메뉴 스타일 끝 === */
+.cmt_list .cmt_set .cmt_box .user .cmt_task .btn_more {
+	border: 0;
+	border-radius: 0;
+	background-color: transparent;
+	padding: 8px;
+	margin: -8px;
+	border-radius: 50%
+}
+
+.cmt_list .cmt_set .cmt_box .user .cmt_task .btn_more:hover {
+	background-color: var(--bg-hover);
+}
+
+.cmt_list .cmt_set .cmt_box .user .cmt_task .btn_more:before {
+	background-image: url(../img/ico_more.svg);
+	background-size: 20px;
+	width: 20px;
+	height: 20px;
+	display: block;
+	content: ""
+}
+
+.cmt_list .cmt_set .cmt_box .user .cmt_task .ly_context {
+	position: absolute;
+	top: 32px;
+	right: 6px;
+	width: 160px;
+	background: var(--bg-default);
+	border: 1px solid var(--border-default);
+	box-shadow: var(--shadow-md);
+	border-radius: 6px;
+	z-index: 99;
+	display: none;
+}
+
+.cmt_list .cmt_set .cmt_box .user .cmt_task .ly_context.active {
+	display: block;
+}
+
+.cmt_list .cmt_set .cmt_box .user .cmt_task .ly_context ul li:hover {
+	background-color: var(--bg-hover);
+}
+
+.cmt_list .cmt_set .cmt_box .user .cmt_task .ly_context ul li button {
+	padding: 10px 16px;
+	width: 100%;
+	text-align: left;
+}
+
+/* Compact selectBox - 기존에 주신 CSS 그대로 유지 */
+.manage-selectBox {
+	position: relative;
+	margin-bottom: 10px;
+	font-size: 13px;
+}
+
+.manage-selectBox::after {
+	position: absolute;
+	top: 50%;
+	right: 12px;
+	margin-top: -5px;
+	width: 6px;
+	height: 6px;
+	content: '';
+	border: 1px solid var(--color-gray-600);
+	border-width: 0 0 2px 2px;
+	transform: rotate(-45deg);
+}
+
+.manage-selectBox.on::after {
+	margin-top: -3px;
+	transform: rotate(135deg);
+}
+
+.manage-selectBox .txtBox {
+	width: 100%;
+	height: 32px;
+	padding-left: 10px;
+	cursor: pointer;
+	background: transparent;
+	border: 1px solid var(--border-default);
+	border-radius: 4px;
+	font-size: 13px;
+	line-height: 32px;
+}
+
+.manage-selectBox .option {
+	display: none;
+	position: absolute;
+	top: 34px;
+	left: 0;
+	width: 100%;
+	border: 1px solid var(--border-default);
+	background-color: var(--bg-default);
+	border-radius: 4px;
+	box-shadow: var(--shadow-md);
+	z-index: 11;
+	max-height: 200px;
+	overflow-y: auto;
+	cursor: pointer;
+	scrollbar-width: thin;
+	font-size: 13px;
+}
+
+.manage-selectBox .option li {
+	padding: 6px 10px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.manage-selectBox .option li:hover {
+	background-color: var(--bg-hover);
+}
+
+.manage-selectBox select {
+	width: 100%;
+	height: 32px;
+	padding-left: 10px;
+	cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: 1px solid var(--border-default);
+	border-radius: 4px;
+	font-size: 13px;
+}
+
+.manage-selectBox.disabled .txtBox {
+	background-color: var(--colorBg29);
+	border-color: var(--colorBg10);
+	pointer-events: none;
+}
+
+.manage-selectBox select:focus, .selectBox .txtBox:focus {
+	border-color: var(--border-focus);
+	color: var(--text-default);
+}
+
+.manage-selectBox.done .txtBox {
+	color: var(--text-default);
+	border-color: var(--border-default);
+}
+
+/* 반응형을 위한 미디어 쿼리 (화면 폭이 좁아질 때) - 이전에 주신 CSS 그대로 유지 */
+@media ( max-width : 1200px) {
+	#section_cen {
+		padding: 10px;
+	}
+	.search-form {
+		padding: 8px 10px;
+	}
+	.tbl_list th, .tbl_list td {
+		padding: 8px 5px;
+		font-size: 11px;
+	}
+	.tbl_list td:first-child {
+		padding-left: 8px;
+	}
+	.tbl_list td:nth-child(3) select, .tbl_list td:nth-child(3) button
+		 {
+		font-size: 10px;
+		padding: 3px 6px;
+	}
+}
+
+@media ( max-width : 900px) {
+	.search-form {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.search-input, .filter-select, .btn-search {
+		width: 100%;
+		min-width: unset;
+	}
+	.tbl_list {
+		display: block;
+		overflow-x: auto;
+		white-space: nowrap;
+	}
+	.tbl_list thead, .tbl_list tbody, .tbl_list th, .tbl_list td, .tbl_list tr
+		{
+		display: block;
+	}
+	.tbl_list th, .tbl_list td {
+		width: auto !important;
+		text-align: left !important;
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+	}
+	.tbl_list tr {
+		margin-bottom: 10px;
+		border: 1px solid #ccc;
+	}
+	.tbl_list td:first-child {
+		font-weight: bold;
+		background-color: #f5f5f5;
+		padding-top: 10px !important;
+	}
+}

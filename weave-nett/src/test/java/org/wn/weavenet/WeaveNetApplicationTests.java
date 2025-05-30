@@ -1,0 +1,13 @@
+package org.wn.weavenet;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class WeaveNetApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}

@@ -1,0 +1,127 @@
+/* 게시판 선택 모달 스타일 */
+
+#boardSelectModal {
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    /* 항상 flex 유지, 보임 여부는 opacity와 pointer-events로 조절 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: opacity 0.3s ease;
+}
+
+#boardSelectModal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#boardSelectModal .modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.25);
+    position: relative;
+}
+
+#boardSelectModal .modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#boardSelectModal .modal-content ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+#boardSelectModal .modal-content li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#boardSelectModal .modal-content label {
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+}
+
+/* 라디오 버튼 기본 스타일 유지 */
+#boardSelectModal input[type="radio"] {
+    -webkit-appearance: radio !important;
+    -moz-appearance: radio !important;
+    appearance: radio !important;
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+#boardSelectModal .close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}
+
+#summernote {
+    margin-top: 20px;
+}
+
+#summernote {
+	margin-top: 20px;
+}
+
+#modalOverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 9999;
+}
+
+#confirmModal {
+	background-color: #fff;
+	border-radius: 8px;
+	padding: 24px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	width: 320px;
+	text-align: center;
+}
+
+.modal-content p {
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 24px;
+}
+
+.modal-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 12px;
+}
+
+#errorButtons {
+    display: none;
+}

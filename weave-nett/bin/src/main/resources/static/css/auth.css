@@ -1,0 +1,104 @@
+@charset "UTF-8";
+body.auth {
+	background: var(--color-gray-100);
+}
+.container {
+    padding: 50px;
+    width: 100%;
+}
+.top_logo {
+	display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.top_logo:before {
+	content: '';
+    background-image: url(../img/logo02.svg);
+    display: block;
+    width: 214px;
+    height: 100px;
+}
+.right-panel {
+    margin: 0 auto;
+    width: 500px;
+    max-width: none;
+    padding: 44px 50px 40px;
+    background-color: var(--color-white);
+    box-shadow: 0px 3px 8px 0px #0000001A;
+    border-radius: 16px;
+}
+.right-panel h1.title {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+.message {
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+.message + form {
+	margin-top: 32px;
+}
+.form-group label {
+	font-size: 12px;
+}
+.form-group label + .inputBox,
+.form-group label + .group_wrap {
+	margin-top:4px;
+}
+.errorMessage {
+    color: var(--color-red);
+    margin-bottom: 16px;
+}
+.button-group {
+	width: 100%;
+	margin-top:20px;
+}
+
+.button-group .btnBc{
+	width: 100%;
+}
+
+.find_wrap {
+    padding: 20px 0 48px;
+    text-align: center;
+}
+
+.find_wrap li {
+    position: relative;
+    display: inline-block;
+}
+
+.find_wrap li+li {
+    padding-left: 28px;
+}
+
+.find_wrap li+li::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 12px;
+    width: 1px;
+    height: 12px;
+    border-radius: .5px;
+    background-color: var(--color-gray-400);
+}
+.find_wrap .find_text {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 17px;
+    text-decoration: none;
+    color: var(--color-gray-600);
+    cursor: pointer;
+}
+.find_wrap.except {
+	padding-bottom: 0; 
+}
+.find_wrap.except .find_text {
+	color: var(--color-primary);
+}
+.find_wrap.except .find_text {
+	color: var(--color-primary)
+}

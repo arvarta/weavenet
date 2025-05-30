@@ -1,0 +1,28 @@
+@charset "UTF-8";
+.group_wrap {
+    display: flex;
+    align-items: top;
+    gap: 8px;
+    width: 100%;
+}
+.group_wrap .inputBox {
+    width: 260px;
+}
+.group_wrap .btnBc {
+	width: calc(100% - 260px);
+}
+.btn_wrap {
+	display:flex;
+	margin-top: 20px;
+}
+.btn_wrap .btnBc {
+    width: 100%;
+}
+.btn_wrap .btnBc.large a, 
+.btn_wrap .btnBc.large button, 
+.btn_wrap .btnBc.large input {
+	padding: 0 10px;
+}
+.btn_wrap .btnBc ~ .btnBc {
+    margin-left: 10px;
+}

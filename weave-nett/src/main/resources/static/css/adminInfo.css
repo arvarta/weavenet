@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+
+
+hr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 40px 0;
+}
+
+.welcome-msg {
+	font-size: 1.5em; /* 24px */
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.welcome-msg span {
+	font-weight: normal;
+}
+
+.dashboard-section {
+	display: flex; /* Flexbox를 사용하여 좌우 배치 */
+	justify-content: space-between; /* 양쪽 끝으로 정렬 */
+	width: 100%;
+}
+
+.status-box {
+	width: 45%; /* 각 박스의 너비 */
+}
+
+.status-box h3 {
+	font-size: 1.2em; /* 19.2px */
+	margin-bottom: 20px;
+	border-bottom: 2px solid #333; /* 제목 밑줄 추가 */
+	padding-bottom: 10px;
+}
+
+.status-box h3 .count {
+	color: #FF6600; /* 주황색 카운트 */
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+.status-table {
+	width: 100%;
+	border-collapse: collapse; /* 테이블 선 없애기 */
+}
+
+.status-table td {
+	padding: 8px 5px;
+	font-size: 0.95em; /* 15.2px */
+	color: #555;
+}
+
+.status-table td:last-child {
+	text-align: right; /* 숫자 오른쪽 정렬 */
+	font-weight: bold;
+	color: #FF6600; /* 주황색 숫자 */
+}
+
+.role-section h2 {
+	font-size: 1.3em; /* 20.8px */
+	margin-bottom: 20px;
+}
+
+.role-table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.role-table td {
+	padding: 12px 5px;
+	font-size: 0.95em;
+	vertical-align: top; /* 텍스트 위쪽 정렬 */
+	line-height: 1.6;
+}
+
+.role-table td:first-child {
+	width: 120px; /* 역할 이름 너비 고정 */
+	font-weight: bold;
+	color: #333;
+}
+
+.role-table td:last-child {
+	color: #666;
+}
